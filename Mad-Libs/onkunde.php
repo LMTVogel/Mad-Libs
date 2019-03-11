@@ -1,8 +1,8 @@
 <?php 
 	$validation = false;
-	$error = ["", "", "", "", "", "", "", ""];
+	$error = ["", "", "", "", "", "", ""];
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		for ($i=1; $i <= 8; $i++) { 
+		for ($i=1; $i <= 7; $i++) { 
 			if (empty($_POST["q".$i])) {
 				$error[$i -1] = "Dit veld dient ingevuld te worden";
 			}else {
@@ -49,18 +49,13 @@
 			<div>
 				<?php 
 					if ($validation == false) {
-						include "include/paniekForm.php";
+						include "include/onkunde.php";
 					}else if ($validation == true) {
-						include "include/paniek.php";
+						include "include/onkundeForm.php";
 					}
 				 ?>
 			</div>	
 		</section>
-		<footer class="footer">
-			<center>
-				<p class="footerText">© Luuk Vogel - 2019</p>
-			</center>
-		</footer>
 	</div>
 </body>
 </html>
